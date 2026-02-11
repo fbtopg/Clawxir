@@ -1,0 +1,45 @@
+{
+  "name": "test-project",
+  "version": "0.1.0",
+  "description": "Test web application using Next.js and Supabase",
+  "frontend": {
+    "framework": "next",
+    "deployment": "vercel",
+    "config": {
+      "typescript": true,
+      "tailwind": true,
+      "eslint": true,
+      "experimental": true
+    }
+  },
+  "backend": {
+    "provider": "supabase",
+    "config": {
+      "database": {
+        "name": "test_db",
+        "schema": "public"
+      },
+      "auth": {
+        "enabled": true
+      },
+      "storage": {
+        "enabled": true
+      }
+    }
+  },
+  "deployment": {
+    "frontend": {
+      "platform": "vercel",
+      "domain": "auto-generated",
+      "envVars": []
+    },
+    "backend": {
+      "region": "us-east-1",
+      "pricing": "free"
+    }
+  },
+  "development": {
+    "port": 3000,
+    "apiUrl": "http://localhost:54321"
+  }
+}
