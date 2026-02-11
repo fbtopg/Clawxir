@@ -6,20 +6,7 @@
   "framework": "nextjs",
   "outputDirectory": ".next",
   "env": {
-    "NEXT_PUBLIC_SUPABASE_URL": "http://localhost:54321",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase_anon_key"
-  },
-  "build": {
-    "env": {
-      "NEXT_PUBLIC_SUPABASE_URL": "http://localhost:54321",
-      "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase_anon_key"
-    }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-  "regions": ["sfo1"]
+    "NEXT_PUBLIC_SUPABASE_URL": "https://tfvhifjsfwtlwgqmoklu.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRmdmhpZmpzZnd0bHdncW1va2x1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4MzAzMTUsImV4cCI6MjA4NjQwNjMxNX0.kY88E3rutWaGY9TptmZRL88WYK5VgoVDCNmnDTAO19Q"
+  }
 }
