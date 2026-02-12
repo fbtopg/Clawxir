@@ -27,22 +27,27 @@ export class ClawxirAuth {
     // Load or create config
     if (fs.existsSync(this.configPath)) {
       try {
-        this.config = JSON.parse(fs.readFileSync(this.configPath, 'utf8'));
-        return this.config.id;
+        const content = fs.readFileSync(this.configPath, 'utf8');
+        this.config = JSON.parse(content);
+        return this.config?.id || this.generateNewConfig().id;
       } catch (error) {
         console.warn('Error reading config, generating new one:', error);
+        this.config = this.generateNewConfig();
       }
+    } else {
+      this.config = this.generateNewConfig();
     }
-
-    // Generate new config
-    this.config = {
-      id: 'clx_' + crypto.randomBytes(24).toString('hex'),
-      created: new Date().toISOString()
-    };
 
     // Save config
     fs.writeFileSync(this.configPath, JSON.stringify(this.config, null, 2));
     return this.config.id;
+  }
+
+  private generateNewConfig(): Config {
+    return {
+      id: 'clx_' + crypto.randomBytes(24).toString('hex'),
+      created: new Date().toISOString()
+    };
   }
 
   getId(): string | null {

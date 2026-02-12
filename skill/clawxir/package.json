@@ -1,0 +1,27 @@
+{
+  "name": "clawxir",
+  "version": "0.1.0",
+  "description": "OpenClaw Architecture Visualizer",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "ws": "^8.16.0",
+    "debug": "^4.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "@types/ws": "^8.5.10",
+    "typescript": "^5.3.3"
+  },
+  "openclaw": {
+    "skill": true,
+    "type": "visualization",
+    "permissions": [
+      "fs.read",
+      "net.connect"
+    ]
+  }
+}
