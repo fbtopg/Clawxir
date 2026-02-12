@@ -1,5 +1,5 @@
 [project]
-name = "test-project"
+name = "clawxir"
 
 [api]
 port = 54321
