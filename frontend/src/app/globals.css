@@ -3,25 +3,46 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 17, 24, 39;
+  --background-end-rgb: 13, 17, 23;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
 }
+
+.node {
+  @apply bg-gray-800 rounded-lg p-4 shadow-lg border-l-4;
+}
+
+.node.model { @apply border-purple-600; }
+.node.tool { @apply border-blue-600; }
+.node.memory { @apply border-green-600; }
+.node.process { @apply border-red-600; }
+
+.node-icon {
+  @apply w-8 h-8 rounded-full flex items-center justify-center;
+}
+
+.model .node-icon { @apply bg-purple-600; }
+.tool .node-icon { @apply bg-blue-600; }
+.memory .node-icon { @apply bg-green-600; }
+.process .node-icon { @apply bg-red-600; }
+
+.node-name {
+  @apply mt-2 font-medium text-gray-200;
+}
+
+.connection {
+  @apply stroke-2;
+}
+
+.connection.data { @apply stroke-blue-400; }
+.connection.call { @apply stroke-green-400; }
+.connection.response { @apply stroke-yellow-400; }
